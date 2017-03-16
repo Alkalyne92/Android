@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">News</string>
+    <string name="app_name_fr">Actualités</string>
+    <string name="app_name_de">Nachrichten</string>
+    <string name="app_name_es">Nuevas</string>
+    <string name="coucou">Coucou</string>
+
+</resources>
