@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="check_box_preference_1"
+        android:title="Afficher les catégories trop ouf" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="check_box_preference_2"
+        android:title="Afficher les catégories nulles" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="check_box_preference_3"
+        android:title="Afficher les catégories inutiles" />
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="switch_preference_1"
+        android:title="Activer le décompte de fin du monde" />
+</PreferenceScreen>
