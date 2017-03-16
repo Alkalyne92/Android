@@ -23,11 +23,13 @@ public class ListFragment extends Fragment implements ClickListener {
             return inflater.inflate(R.layout.list, container, false);
         }
 
+        ///// CREER LE RECYCLER VIEW AVEC LA LISTE DES NEWS
         @Override
         public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+            // Créer le RecyclerView
             RecyclerView rView = (RecyclerView) view.findViewById(android.R.id.list);
+            // Lui assigner un LayoutManger
             rView.setLayoutManager(new LinearLayoutManager(getContext()));
-            //rView.setAdapter(new MyAdapter(new String[]{"Coucou c'est moi Zelda", "Et moi 2", "Voiçi le 3em", "Le 4em", "Et le numéro complémentaire, le 5"}));
 
             // Créer une liste de News
             ArrayList<News> newses = new ArrayList<>();
@@ -41,8 +43,11 @@ public class ListFragment extends Fragment implements ClickListener {
 
         }
 
+
+        ///// QUAND ON CLIQUE SUR L'UN DES ITEMS
+
+        ///// Quand l'HeaderItem est cliqué.
         @Override
-        // Quand l'HeaderItem est cliqué..
         public void onHeaderItemClicked(News news) {
             // Quand je clique, je créer une seconde activité.
             Intent intent = new Intent(getActivity(), SecondActivity.class);
@@ -52,6 +57,7 @@ public class ListFragment extends Fragment implements ClickListener {
             startActivity(intent);
         }
 
+        ///// Quand l'Item est cliqué.
         @Override
         public void onItemClicked(News news) {
             // Quand je clique, je créer une seconde activité.
@@ -60,7 +66,38 @@ public class ListFragment extends Fragment implements ClickListener {
             intent.putExtra("OneNews", news);
             // Je start la seconde activité. = intent
             startActivity(intent);
+
+
+            /*
+            // PARTAGER DU TEXTE
+            //// Créer l'intent
+            Intent i = new Intent(Intent.ACTION_SEND);
+            //// Envoyer les l'url et démarrer l'activité
+            i.setType("text/plain");
+            i.putExtra(android.content.Intent.EXTRA_TEXT, "Si tu lis ce message, c'est que mon appli fonctionne :-)");
+            startActivity(i);
+            */
+
+            /*
+            // OUVRIR UNE ADRESSE DANS LE NAVIGATEUR
+            //// Créer l'intent
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            //// Envoyer les l'url et démarrer l'activité
+            i.setData(Uri.parse("http://www.deezer.com/playlist/2697281324"));
+            startActivity(i);
+            */
+
+            /*
+            // Quand je clique, je créer une seconde activité.
+            Intent intent = new Intent(getActivity(), SecondActivity.class);
+            // Je lui envoi l'objets "One_News" qui contient les paramètres (news) de la News en cours.
+            intent.putExtra("OneNews", news);
+            // Je start la seconde activité. = intent
+            startActivity(intent);
+            */
         }
+
+
 
 
 
