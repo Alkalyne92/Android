@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         ViewPager pager = (ViewPager) findViewById(R.id.view_pager);
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
 
@@ -31,7 +33,7 @@ public class MainActivity extends AppCompatActivity  {
                 builder
                         .setSmallIcon(R.drawable.cochon)
                         .setContentTitle("Voici une notification")
-                        .setContentText("Hola botey");
+                        .setContentText("Hola que tal ?");
 
         // Attribuer un ID à la notif + construire la notif
         nm.notify((int) System.currentTimeMillis(), builder.build());

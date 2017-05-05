@@ -14,13 +14,13 @@ import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private final ArrayList<News> values;
+    private final ArrayList<Post> values;
     private final int TYPE_HEADER = 0;
     private final int TYPE_ITEM = 1;
 
     private final ClickListener listener;
 
-    public MyAdapter(ArrayList<News> values, ClickListener listener) {
+    public MyAdapter(ArrayList<Post> values, ClickListener listener) {
         this.values = values;
         this.listener = listener;
     }
@@ -50,7 +50,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public void onBindViewHolder(RecyclerView.ViewHolder holder,
                                  int position) {
 
-        News news = values.get(position);
+        Post news = values.get(position);
 
         int viewType = getItemViewType(position);
         if (viewType == TYPE_HEADER) {
@@ -81,15 +81,15 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             itemView.setOnClickListener(this);
         }
 
-        public void bindValue(News value) {
-            articletext.setText(value.getArticletext());
-            infostext.setText(value.getInfostext());
+        public void bindValue(Post value) {
+            articletext.setText(value.content);
+            infostext.setText(value.titre);
             itemView.setTag(value);
         }
 
         @Override
         public void onClick(View v) {
-            listener.onItemClicked((News) itemView.getTag());
+            listener.onItemClicked((Post) itemView.getTag());
         }
     }
 
@@ -106,15 +106,15 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             itemView.setOnClickListener(this);
         }
 
-        public void bindValue(News value) {
-            articletext.setText(value.getArticletext());
-            infostext.setText(value.getInfostext());
+        public void bindValue(Post value) {
+            articletext.setText(value.content);
+            infostext.setText(value.titre);
             itemView.setTag(value);
         }
 
         @Override
         public void onClick(View v) {
-            listener.onHeaderItemClicked((News) itemView.getTag());
+            listener.onHeaderItemClicked((Post) itemView.getTag());
         }
     }
 

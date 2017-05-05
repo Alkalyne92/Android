@@ -5,8 +5,8 @@ package com.example.leamariette.myapplication;
  */
 
 public interface ClickListener {
-    void onHeaderItemClicked(News news);
-    void onItemClicked(News news);
+    void onHeaderItemClicked(Post news);
+    void onItemClicked(Post news);
 
 
 }
